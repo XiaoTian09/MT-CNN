@@ -33,24 +33,4 @@ model = load_model('polarity20_1.cnn')
 classes=model.predict(x_pre,batch_size=8,verbose=0)
 np.savetxt("predict20_1.txt", classes)
 
-'''
-y_pre0= []
-for i in range(classes.shape[0]):
-    if classes[i,1]>0.8:
-#        print(classes[i,0])
-        y_pre0.append(1)
-    elif classes[i,2]>0.8:
-        y_pre0.append(2)
-    else:
-        y_pre0.append(0)   
-    
-plt.figure()
-plt.plot(y_pre-y_pre0,'b',label='True')
-#plt.plot(y_pre0,'r', linestyle='-.', label='CNN')
-
-y_pre1=np.array(y_pre0)
-np.savetxt("predict_result1.txt", y_pre1)
-np.savetxt("true_result1.txt", y_pre)
-
-'''
 
