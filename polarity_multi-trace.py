@@ -1,8 +1,8 @@
 '''
-Predict the P-wave first motion polarity 
-with multi-trace information using CNN.
+Predict the P-wave first motion polarities of microseismic events 
+with multitrace information using CNN.
 
-
+Xiao Tian: tianxiao@mail.ustc.edu.cn
 '''
 
 from __future__ import print_function
@@ -157,7 +157,7 @@ model.fit(x_train, y_train,
           callbacks=[history])
 score = model.evaluate(x_test, y_test, verbose=0)
 
-model.save('polarity10_3.cnn')
+model.save('polarity10.cnn')
 weights=model.layers[0].get_weights()
 #plot_model(model,to_file='test.png')
 print('Test loss:', score[0])
@@ -168,7 +168,7 @@ history.loss_plot('epoch')
 
 
 loss1=history.losses['epoch']+history.val_loss['epoch']
-numpy.savetxt("loss_syn10_3.txt",loss1)
+numpy.savetxt("loss_syn10.txt",loss1)
 
 time_end = time.time()   
 
