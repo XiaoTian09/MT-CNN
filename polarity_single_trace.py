@@ -1,8 +1,8 @@
-''''Trains a simple convnet on the MNIST dataset.
+''''
+Predict the P-wave first motion polarities of microseismic events 
+with single trace information using CNN.
 
-Gets to 99.25% test accuracy after 12 epochs
-(there is still a lot of margin for parameter tuning).
-16 seconds per epoch on a GRID K520 GPU.
+Xiao Tian: tianxiao@mail.ustc.edu.cn
 '''
 
 from __future__ import print_function
